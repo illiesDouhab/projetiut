@@ -1,0 +1,5 @@
+SELECT * FROM participe as p , jo as j
+WHERE p.idjo=j.idjo
+AND j.annee=1988
+AND j.season='WINTER';
+ 

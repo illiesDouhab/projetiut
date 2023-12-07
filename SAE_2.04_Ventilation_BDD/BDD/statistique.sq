@@ -1,0 +1,13 @@
+SELECT a.id,a.name,count(*)
+FROM participe as p , athlete as a
+WHERE p.id=a.id
+GROUP BY a.id,a.name 
+ORDER BY count(*)
+limit 20;
+
+
+SELECT * FROM participe as p , jo as j
+WHERE p.idjo=j.idjo
+AND j.annee=1988
+AND j.season='Winter';
+ 

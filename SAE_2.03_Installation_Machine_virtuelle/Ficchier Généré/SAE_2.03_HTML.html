@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>SAE_2.03</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">SAE_2.03</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#sae2.03">SAE2.03</a></li>
+<li><a href="#configuration-de-notre-machine">Configuration de notre Machine</a>
+<ul>
+<li><a href="#la-configuration-matériel-de-notre-machine-virtuelle">La Configuration Matériel de Notre Machine Virtuelle</a>
+<ul>
+<li><a href="#questions">Questions :</a></li>
+</ul></li>
+<li><a href="#installation-de-los">Installation de l’OS</a>
+<ul>
+<li><a href="#questions-1">Questions</a></li>
+</ul></li>
+<li><a href="#préparation-du-système">Préparation du système</a>
+<ul>
+<li><a href="#ajout-de-droits-administrateur-á-un-utilisateur-user">Ajout de droits administrateur á un utilisateur (<span class="citation" data-cites="user">@user</span>)</a></li>
+<li><a href="#installation-des-suppléments-invités">Installation des suppléments invités</a></li>
+</ul></li>
+<li><a href="#installation-logiciel-utile">Installation Logiciel Utile</a></li>
+</ul></li>
+<li><a href="#git">Git</a>
+<ul>
+<li><a href="#questions-4">Questions</a></li>
+<li><a href="#installation-de-gitea">Installation de Gitea</a></li>
+<li><a href="#creer-un-depot">Creer un depot</a></li>
+</ul></li>
+<li><a href="#raport-technique">RAPORT TECHNIQUE</a>
+<ul>
+<li><a href="#nos-difficultés">Nos Difficultés</a>
+<ul>
+<li><a href="#fichier-xml">Fichier XML</a></li>
+<li><a href="#grub">Grub</a></li>
+<li><a href="#création-dune-table-des-matières-sommaire-automatique">Création d’une table des matières / sommaire automatique</a></li>
+</ul></li>
+<li><a href="#résolutions">Résolutions</a>
+<ul>
+<li><a href="#fichier-xml-1">Fichier XML</a></li>
+<li><a href="#grub-1">Grub</a></li>
+<li><a href="#création-dune-table-des-matières-sommaire-automatique-1">Création d’une table des matières / sommaire automatique</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<p>Rapport_Final_Illies_Xavier_Nahtan</p>
+<h1 id="sae2.03">SAE2.03</h1>
+<p>Bonjour, nous sommes <em><strong>Douhab Illies</strong></em>, <em><strong>Vasset Nathan</strong></em> et <em><strong>Moyon Xavier</strong></em>, nous sommes heureux de vous présenter notre projet de SAE.</p>
+<h1 id="configuration-de-notre-machine">Configuration de notre Machine</h1>
+<h2 id="la-configuration-matériel-de-notre-machine-virtuelle">La Configuration Matériel de Notre Machine Virtuelle</h2>
+<ol type="1">
+<li><p>Type : <strong><a href="https://www.journaldunet.fr/web-tech/guide-de-l-entreprise-digitale/1091588-kernel-linux-open-source-8/">Linux</a></strong> La famille de systèmes d’exploitation Linux ou GNU/Linux est basée sur le noyau Linux et appartient à la catégorie des systèmes d’exploitation open source de type Unix.</p></li>
+<li><p>Version : <strong><a href="https://www.debian.org/releases/jessie/mips/ch01s03.html.fr">Debian 64 bit</a></strong>, Debian est un système d’exploitation construit par le projet Debian, qui se distingue par son utilisation du noyau Linux et par les logiciels inclus dans Debian qui sont des logiciels libres.</p></li>
+</ol>
+<figure>
+<img src="https://cdn.discordapp.com/attachments/1077716382319386807/1078663816717549618/image.png" alt="" /><figcaption>Sélection Type et Version</figcaption>
+</figure>
+<ol start="3" type="1">
+<li>Mémoire vive (RAM) : <strong><a href="https://www.kingston.com/fr/blog/pc-performance/difference-between-memory-storage">2048</a></strong> La RAM de votre PC, ou mémoire vive, est un type de réservoir de stockage d’informations temporaire utilisé par le processeur. Par conséquent, elle est essentielle pour le fonctionnement de l’ordinateur.</li>
+</ol>
+<figure>
+<img src="https://media.discordapp.net/attachments/1077716382319386807/1078663924477612032/image.png" alt="" /><figcaption>Mémoire Vive</figcaption>
+</figure>
+<ol start="4" type="1">
+<li>Disque dur : <strong><a href="https://www.kingston.com/fr/blog/pc-performance/difference-between-memory-storage">20 Go entier</a></strong><br />
+Le stockage est la composante de votre ordinateur qui permet de conserver et d’accéder aux données à long terme.</li>
+</ol>
+<figure>
+<img src="https://media.discordapp.net/attachments/1077716382319386807/1078663924746027049/image.png" alt="" /><figcaption>Disque dur</figcaption>
+</figure>
+<h3 id="questions">Questions :</h3>
+<ol type="1">
+<li><blockquote>
+<p>Que signifie <strong>64-bit</strong> dans “Debian 64-bit”</p>
+</blockquote>
+<p><em>Tout d’abord <a href="https://www.debian.org/releases/jessie/mips/ch01s01.html.fr">Debian</a> est un système d’exploitation libre et open source basé sur Linux, il propose beaucoup de logiciel open source, et aussi de nombreux outils de gestion de paquets pour mettre à jour, installer , supprimer des logiciels. “<a href="https://lecrabeinfo.net/32-ou-64-bits-comment-savoir.html">64-bit</a>” fait référence à architecture du processeur utilisé pour exécuter le systeme d’exploitation Deabian, l’architecture peut traiter des données en blocs de 64 bits en même temps, contrairement à une architecture 32 bits. Ce qui permet d’obtenir de meilleur performance avec cette architecture</em></p></li>
+<li><blockquote>
+<p>Quel est la configuration réseau utilisée par défaut ?</p>
+</blockquote>
+<p><em><strong><a href="https://learn.microsoft.com/fr-fr/windows-server/networking/technologies/dhcp/dhcp-top">DHCP</a></strong> <strong>(Dynamic Host Configuration Protocol)</strong> est la configuration réseau utilisé par défaut, cette dernière permet de configurer les adresse IP automatiquement des leurs connexion au réseau local</em></p></li>
+<li><blockquote>
+<p>Quel est le nom du fichier XML contenant la configuration de votre machine</p>
+</blockquote></li>
+</ol>
+<ul>
+<li><p><em>Le <a href="https://www.journaldunet.fr/web-tech/dictionnaire-du-webmastering/1203615-xml-extensible-markup-language-definition-traduction/">XML</a> <strong>(Extensible Markup Language)</strong> est un langage utilisant des balises, il décrit et structure des données.</em></p>
+<p><em>Vous pouvez trouver le fichier de configuration XML á cet emplacement : usr/local/virtual_machine/infoetu/<span class="citation" data-cites="login/sae203">@login/sae203</span>/<strong>sae203.vbox-prev</strong></em></p></li>
+<li><p><em>Le nom du fichier est le suivant : <strong>sae203.vbox-prev</strong></em></p></li>
+</ul>
+<ol start="4" type="1">
+<li><blockquote>
+<p>Sauriez vous le modifier directement le fichier pour mettre 2 processeurs à votre machine ?</p>
+</blockquote>
+<p><em>Tout d’abord ajouter un processeur dans une machine permet d’augmenter les performances de cette machine, ainsi plusieurs taches peuvent s’exécuter en parallèle</em></p>
+<p><em>Si vous souhaitez ajouter un nouveau processeur a votre machine vous pouvez modifier ce fichier afin d’y ajouter ceci :</em></p>
+<pre><code>`Count=&quot;2&quot;`</code></pre>
+<p><em>Vous devez ajouter cette commande dans cette partie du fichier XML :</em></p>
+<pre><code> &lt;CPU count=&quot;2&quot;&gt;</code></pre></li>
+</ol>
+<h2 id="installation-de-los">Installation de l’OS</h2>
+<p>Nous avons installé l’OS avec la configuration suivante :</p>
+<ul>
+<li><p>Nom de la machine (à l’installation) : <strong>serveur</strong></p></li>
+<li><p>Pays/langue : <strong>France</strong></p>
+<figure>
+<img src="https://media.discordapp.net/attachments/1077716382319386807/1078656129489440818/image.png" alt="" /><figcaption>Sélection Langage</figcaption>
+</figure></li>
+<li><p><a href="linuxtricks.fr/news/10-logiciels-libres/393-mirrorservice-org-un-miroir-linux-qui-depote/">Miroir</a> : <a href="http://debian.polytech-lille.fr">http://debian.polytech-lille.fr</a> : Un miroir est un type de serveur (HTTP, FTP ou RSYNC) qui stocke et diffuse des ISO ou des paquets de distributions Linux.</p>
+<figure>
+<img src="https://media.discordapp.net/attachments/1077716382319386807/1078657236081070110/image.png" alt="" /><figcaption>Sélection Miroir</figcaption>
+</figure></li>
+<li><p><a href="https://help.ubuntu.com/kubuntu/desktopguide/fr/root-and-sudo.html">Compte administrateur</a> : <strong>root</strong> / <strong>root</strong> Le super-utilisateur (root) dans GNU/Linux est l’utilisateur qui a les droits d’accès administratifs à votre système. Les utilisateurs normaux n’ont pas ces droits pour des raisons de sécurité.</p>
+<figure>
+<img src="https://media.discordapp.net/attachments/1077716382319386807/1078656384473780354/image.png" alt="" /><figcaption>Creation root</figcaption>
+</figure></li>
+<li><p>Un Compte utilisateur : User / user / user<br />
+<img src="https://media.discordapp.net/attachments/1077716382319386807/1078656485581660160/image.png" alt="Creation User" /></p></li>
+<li><p><a href="https://www.data-labcenter.fr/news-et-reportages/conseils-et-generalites/le-partitionnement-dun-disque-dur/">Partition</a> : 1 seule partition recouvrant le disque entier :</p></li>
+</ul>
+<pre><code>![Partition du disque dure](https://media.discordapp.net/attachments/900428634664370268/1088465312808177725/image.png?width=720&amp;height=538)</code></pre>
+<ul>
+<li><p><strong>Sélection des logiciels de démarrage :</strong></p>
+<ul>
+<li><p>environnement de bureau Debian</p></li>
+<li><p><a href="https://wiki.debian.org/fr/MATE#:~:text=Qu&#39;est%20ce%20que%20MATE,autres%20syst%C3%A8mes%20d&#39;exploitations%20Unix.">MATE</a> (penser à décocher Gnome)</p></li>
+<li><p><a href="https://www.lemagit.fr/definition/Serveur-Web">serveur web</a></p></li>
+<li><p><a href="https://doc.ubuntu-fr.org/ssh">serveur ssh</a></p></li>
+<li><p>utilitaire usuels du système<br />
+(les utilitaires usuels du système sont des logiciels intégrés au système récent, ces programmes permettent notamment de faciliter la gestion du système)</p>
+<figure>
+<img src="https://media.discordapp.net/attachments/1077716382319386807/1078657914190975066/image.png" alt="" /><figcaption>Choix Logiciels</figcaption>
+</figure></li>
+</ul></li>
+</ul>
+<h3 id="questions-1">Questions</h3>
+<ol type="1">
+<li><blockquote>
+<p>Qu’est-ce qu’un fichier iso bootable ?</p>
+</blockquote>
+<ul>
+<li><em>Un fichier iso est un fichier d’archive qui contient une copie identique des données trouvées sur un disque optique</em>.</li>
+<li><em>Un fichier iso est considéré comme bootable lorsque qu’il peut être exécuté dès le lancement de la machine avant même le chargent de l’OS de la machine</em>.<br />
+–&gt; Un ficher iso bootable est donc une copie identique des données trouvées sur un disque optique et qui peut être exécuté dès le lancement de la machine avant même le chargement de l’OS</li>
+</ul></li>
+<li><blockquote>
+<p>Qu’est-ce que MATE ? GNOME ?</p>
+</blockquote>
+<p><em>MATE et GNOME sont des environnements de bureau graphique qui rendent l’utilisation du système plus intuitive, ils sont présents sur plusieurs systèmes comme Linux ou Unix par exemple</em></p></li>
+<li><blockquote>
+<p>Qu’est-ce qu’un serveur web ?</p>
+</blockquote>
+<p><em>Un <a href="https://developer.mozilla.org/fr/docs/Learn/Common_questions/Web_mechanics/What_is_a_web_server">serveur web</a> est un programme informatique qui tourne sur un ordinateur connecté à Internet, et dont le rôle est de répondre aux requêtes HTTP émises par les navigateurs. Il a pour fonction d’envoyer des fichiers, tels que des pages HTML, des images, des fichiers CSS, des scripts, etc., aux ordinateurs des utilisateurs qui les ont demandés.</em></p></li>
+<li><blockquote>
+<p>Qu’est-ce qu’un serveur ssh ?</p>
+</blockquote>
+<p><em>Le <a href="https://www.journaldunet.fr/web-tech/dictionnaire-du-webmastering/1203479-ssh-secure-shell-definition-traduction/">serveur SSH</a>, ou Secure Shell, est un programme informatique qui permet de se connecter et de communiquer en toute sécurité avec un ordinateur distant. Il fonctionne en utilisant le protocole SSH pour établir une connexion cryptée entre un client SSH et le serveur SSH distant.</em></p></li>
+<li><blockquote>
+<p>Qu’est-ce qu’un serveur mandataire ?</p>
+</blockquote>
+<p><em>le nom serveur mandataire est le nom français du “<a href="https://www.varonis.com/fr/blog/serveur-proxy">proxy server</a>”, le serveur mandataire est un serveur intermédiaire sur Internet qui stocke temporairement les données afin de faciliter leur accès.</em></p></li>
+</ol>
+<h2 id="préparation-du-système">Préparation du système</h2>
+<h3 id="ajout-de-droits-administrateur-á-un-utilisateur-user">Ajout de droits administrateur á un utilisateur (<span class="citation" data-cites="user">@user</span>)</h3>
+<ul>
+<li><p>On doit tout d’abord être en tant qu’administrateur, pour cela on exécute la commande suivante :</p>
+<p><code>su -</code></p></li>
+<li><p>Ensuite entrer la commande suivante vous permettant d’ajouter l’utilisateur au groupe administrateurs (sudo)</p>
+<p><code>usermod -aG sudo @user</code></p></li>
+</ul>
+<h4 id="question">Question</h4>
+<ol type="1">
+<li><blockquote>
+<p>Comment peut-on savoir à quels groupes appartient l’utilisateur user ?</p>
+</blockquote>
+<p><em>Chaque utilisateur appartient à un ou plusieurs groupe(s) (s’il appartient à plusieurs groupes l’un d’entre eux sera son principal groupe).</em> <em>Pour savoir quel groupe appartient un utilisateur , il faut regarder dans le fichier <strong>/etc/group</strong> . Ou alors on uttilise la commande suivante :</em></p>
+<pre><code>groups @user </code></pre></li>
+</ol>
+<h3 id="installation-des-suppléments-invités">Installation des suppléments invités</h3>
+<p>Pour monter le cd on utilise la commande suivante :<br />
+<code>sudo mount /dev/cdrom /mnt</code></p>
+<figure>
+<img src="https://media.discordapp.net/attachments/1077716382319386807/1078667114887528448/image.png" alt="" /><figcaption>cdrom</figcaption>
+</figure>
+<p>Ensuite on utilise la commande suivante pour installer les suppléments :</p>
+<pre><code>sudo /mnt/VBoxLinuxAdditions.run</code></pre>
+<figure>
+<img src="https://media.discordapp.net/attachments/1077716382319386807/1078667398720278558/image.png" alt="" /><figcaption>additions</figcaption>
+</figure>
+<h4 id="questions-2">Questions</h4>
+<ol type="1">
+<li><blockquote>
+<p>Quel est la version du noyau Linux utilisé par votre VM ? N’oubliez pas, comme pour toutes les questions, de justifier votre réponse</p>
+</blockquote>
+<p><em>Le <a href="https://linux.goffinet.org/administration/processus-et-demarrage/noyau-linux/">noyau Linux</a> est le composant central du système d’exploitation Linux. Il est développé sous licence libre et open source et joue un rôle essentiel en gérant les ressources matérielles de l’ordinateur, tout en permettant aux logiciels de communiquer avec le matériel en question Pour connaitre la version de noyaux linux on utilise la commande suivant :</em></p>
+<p><code>uname -mr</code></p>
+<figure>
+<img src="https://media.discordapp.net/attachments/1077716382319386807/1078666411414671421/image.png" alt="" /><figcaption>uname -mr</figcaption>
+</figure>
+<p>*On obtient donc que la version du noyau est la suivante : <strong><code>5.10.0-21-amd64</code></strong></p>
+<ul>
+<li><em>Le 5 pointe vers la version principale du noyau</em></li>
+<li><em>Le .10 pointe vers la version majeur</em></li>
+<li><em>Le .0 pointe vers la version mineur</em></li>
+<li><em>Le -21 représente le niveau des correctifs et le niveau des bugs</em></li>
+</ul></li>
+<li><blockquote>
+<p>À quoi servent les suppléments invités ? Donner 2 principales raisons de les installer.</p>
+</blockquote>
+<p><em>Les <a href="https://docs.oracle.com/cd/E26217_01/E35193/html/qs-guest-additions.html">suppléments invités</a> sont une série d’extensions permettant d’améliorer l’utilisation de notre machine virtuelle, notamment en permettant d’adapter la résolution de l’affichage automatique par rapport a notre machine physique ainsi que de permettre d’effectuer des “copier-coller” / déplacer des éléments de notre machine physique vers notre machine virtuelle et inversement.</em></p></li>
+<li><blockquote>
+<p>À quoi sert la commande <code>mount</code> (Dans notre cas et dans le cas général)</p>
+</blockquote>
+<p><em>Dans notre cas cette commande sert a configurer/mettre en place les extensions et dans le cas générale elle sert pour mettre en place des fichier de configuration( <strong>iso</strong> par exemple )</em></p></li>
+</ol>
+<h2 id="installation-logiciel-utile">Installation Logiciel Utile</h2>
+<ul>
+<li><p>Installation environnement graphique MATE :</p>
+<ul>
+<li><p>Connectez-vous en root</p></li>
+<li><p>Utilisez la commande <code>apt install task-mate-desktop</code></p></li>
+<li><p>Redémarrez votre machine avec la commande <code>reboot</code></p></li>
+</ul></li>
+<li><p>sudo : sinon la gestion sudo est inutile :</p>
+<ul>
+<li>Pour cela vous devez être en <code>root</code> vous pouvez utiliser la commande <code>su -</code> il vous suffira de rentrer votre mot de passe root</li>
+</ul>
+<figure>
+<img src="https://cdn.discordapp.com/attachments/900428634664370268/1086929654151135342/image.png" alt="" /><figcaption>passer en root</figcaption>
+</figure>
+<ul>
+<li>Maintenant que vous êtes en <code>root</code>vous pouvez télécharger <code>sudo</code></li>
+</ul>
+<figure>
+<img src="https://cdn.discordapp.com/attachments/900428634664370268/1086930390247280670/image.png" alt="" /><figcaption>installation root</figcaption>
+</figure>
+<ul>
+<li>Maintenant vous allez pouvoir utiliser les commandes root depuis votre session utilisateur en utilisant <code>sudo [commande]</code> ( il se peut que votre mot de passe utilisateur vous soit demandé)</li>
+</ul></li>
+<li><p>Installation logiciel en générale :</p>
+<ul>
+<li><p>Maintenant que vous possédez <code>sudo</code> attribuer les droits sudo via <code>root</code></p></li>
+<li><p>Vous pouvez, alors faire <code>exit</code> et retourner sur votre compte <code>user</code></p></li>
+<li><p>Pour télécharger des logiciels il faut en général utiliser <code>sudo apt install [nom_package]</code></p>
+<ul>
+<li>Exemple avec git :</li>
+</ul></li>
+</ul>
+<figure>
+<img src="https://cdn.discordapp.com/attachments/900428634664370268/1086932230871466056/image.png" alt="" /><figcaption>exemple installation git</figcaption>
+</figure></li>
+</ul>
+<h4 id="questions-3">Questions</h4>
+<ol type="1">
+<li><blockquote>
+<p>Qu’est-ce que le Projet Debian ? D’où vient le nom Debian ?</p>
+</blockquote>
+<p><em>Le <a href="https://www.debian.org/doc/manuals/project-history/intro.fr.html#:~:text=Le%20projet%20Debian%20est%20un,des%20milliers%20d&#39;applications%20pr%C3%A9empaquet%C3%A9es">projet Debian</a> est une communauté internationale de bénévoles qui travaille à développer un système d’exploitation constitué uniquement de logiciels libres.</em></p></li>
+<li><blockquote>
+<p>Il existe 3 durées de prise en charge (support) de ces versions : la durée minimale, la durée en support long terme (LTS) et la durée en support long terme étendue (ELTS). Quelle sont les durées de ces prises en charge ?</p>
+</blockquote>
+<ul>
+<li>La durée minimale est de 1 ans après l’arrivée de la derniere version stable</li>
+<li><em>Debian <a href="https://wiki.debian.org/fr/LTS">LTS</a> (<strong>Long Term Support</strong>) est un projet de prise en charge a long terme, qui permet de pouvoir conserver toutes les versions stable de Debian pendant</em> <strong><em>5 ans</em></strong></li>
+<li><em>Debian <a href="https://wiki.debian.org/LTS/Extended">ELTS</a> (<strong>Extended Long Term Support</strong>) est un offre visant a rallonger la durée de vie en plus du LTS est de <strong>5 ans</strong> ce qui nous fait une durée de vie total de</em> <strong><em>10 ans</em></strong></li>
+</ul></li>
+<li><blockquote>
+<p>Pendant combien de temps les mises à jour de sécurité seront-elles fournies ?</p>
+</blockquote>
+<p><em>D’après <a href="https://www.debian.org/security/faq.fr.html#:~:text=Q.%20%3A%20Pendant%20combien%20de%20temps,est%20publiée%20la%20même%20année">une personne de l’équipe Debian</a> lors question réponse :</em></p>
+<p><em>« L’équipe en charge de la sécurité essaye de prendre en charge la distribution stable environ une année après que la version stable suivante a été publiée, sauf lorsqu’une autre distribution stable est publiée la même année. Il n’est pas possible de prendre en charge trois distributions, c’est déjà bien assez difficile avec deux. »</em></p></li>
+<li><blockquote>
+<p>Combien de version au minimum sont activement maintenues par Debian ? Donnez leur nom générique (= les types de distribution).</p>
+</blockquote>
+<p><em>Debian a toujours au moins <a href="https://www.debian.org/releases/index.fr.html#:~:text=Debian%20a%20toujours%20au%20moins,%3A%20stable%20%2C%20testing%20et%20unstable%20.">trois versions</a> activement entretenues :</em></p>
+<ul>
+<li><em><a href="https://www.debian.org/releases/stable/">stable</a> (Il s’agit de la version de Debian destinée à la production, celle qui est recommandons en priorité pour une utilisation.)</em></li>
+<li><em><a href="https://www.debian.org/releases/testing/">testing</a> (La distribution testing de Debian regroupe les paquets qui n’ont pas encore été validés pour être intégrés dans la distribution stable.)</em></li>
+<li><em><a href="https://www.debian.org/releases/sid/">unstable</a> (La distribution unstable de Debian est celle qui est utilisée pour les activités de développement en cours.)</em></li>
+</ul></li>
+<li><blockquote>
+<p>Chaque distribution majeur possède un nom de code différent. Par exemple, la version majeur actuelle (Debian 11) se nomme Bullseye. D’où viennent les noms de code données aux distributions ?</p>
+</blockquote>
+<p><em>Les <a href="https://www.dbmtechnologies.com/debian-versions">versions de Debian</a> sont souvent nommées d’après les personnages du film “Toy Story” de Disney-Pixar. Cette tradition a été initiée par le fondateur de Debian, Ian Murdock, qui était un grand admirateur du film et a choisi les noms des personnages principaux pour les versions de Debian.</em></p></li>
+<li><blockquote>
+<p>Première version avec un nom de code ◦ Quelle a était le premier nom de code utilisé ? ◦ Quand a-t-il été annoncé ? ◦ Quelle était le numéro de version de cette distribution ?</p>
+</blockquote>
+<p><em>La <a href="https://wiki.debian.org/fr/DebianBuzz">première version de Debian</a> ne voit le jour qu’en 1996 et porte le nom de code Buzz. Depuis cette première version et à ce jour, le système est constamment disponible en trois branches : stable , testing et unstable . La branche stable , comme son nom le suggère, est à privilégier pour les machines de production , Le numéro de distribution est le 1.1</em></p></li>
+<li><blockquote>
+<p>Dernière nom de code attribué : ◦ Quel est le dernier nom de code annoncée à ce jour ? ◦ Quand a-t-il été annoncé ? ◦ Quelle est la version de cette distribution ?</p>
+</blockquote>
+<p><em>La derniere version de debian est la numéro <strong>14</strong> sous le nom de code de <strong>Forky</strong> est qui voit le jour en <strong>Octobre 2022</strong>.</em></p></li>
+</ol>
+<h1 id="git">Git</h1>
+<h2 id="questions-4">Questions</h2>
+<ol type="1">
+<li><blockquote>
+<p>Qu’est-ce que le logicle git-gui ? Comment se lance t’il ?</p>
+</blockquote>
+<p><em><a href="https://git-scm.com/downloads/guis">Git-gui</a> est une interface graphique pour git, grâce à lequel on peut on créer, cloner ou ouvrir un dépôt gui. Cette interface rend l’utilisation de git plus intuitive , donc accessible et compréhensible par plus de monde. Elle est livrée avec Git et peut être exécutée à partir de la ligne de commande.</em></p>
+<p><em>pour lancer : <code>git gui</code></em></p></li>
+</ol>
+<figure>
+<img src="https://media.discordapp.net/attachments/900428634664370268/1088157426034933880/image.png" alt="" /><figcaption>Image Commande git gui</figcaption>
+</figure>
+<figure>
+<img src="https://media.discordapp.net/attachments/900428634664370268/1088157439515435058/image.png" alt="" /><figcaption>Interface git gui au démarrage</figcaption>
+</figure>
+<ol start="2" type="1">
+<li><blockquote>
+<p>Qu’est-ce que le logiciel gitk ? Comment se lance-t-il ?</p>
+</blockquote>
+<p><em><code>gitk</code> est une interface graphique pour Git qui permet de visualiser et naviguer facilement dans l’historique des commits d’un dépôt Git. Tout comme git-gui, gitk est compris dans l’installation de git.</em></p>
+<figure>
+<img src="https://media.discordapp.net/attachments/900428634664370268/1088157453222432838/image.png" alt="" /><figcaption>Interface gitk</figcaption>
+</figure></li>
+<li><blockquote>
+<p>Quelle sera la ligne de commande git pour utiliser par défaut le proxy de l’université sur tous vos projets git ?</p>
+</blockquote>
+<p><em>Pour configurer git pour utiliser par défaut le proxy de l’iut il faudra deux commande :</em></p>
+<ul>
+<li><em><code>git config --global http.proxy http://cache.univ-lille.fr:3128</code></em></li>
+<li><em><code>git config --global https.proxy http://cache.univ-lille.fr:3128</code></em></li>
+</ul></li>
+<li><blockquote>
+<p>Qu’est-ce que Gitea ? À quels logiciels bien connus dans ce domaine peut-on le comparer (en citer au moins 2) ?</p>
+</blockquote>
+<p><em><a href="https://docs.gitea.io/fr-fr/">Gitea</a> est un service de gestion de version autohébergé. On pourrait le comparer à d’autres tels que Gitlab (utiliser par l’iut) , Github ou bien d’autres encore.</em></p></li>
+</ol>
+<h2 id="installation-de-gitea">Installation de Gitea</h2>
+<p>Tout d’abord pour éviter de retaper quelques informations a chaque dépôt nous allons initiale (–global) quelque information dès le départ (n’oublier de changer les information avec les votre) :</p>
+<figure>
+<img src="https://media.discordapp.net/attachments/900428634664370268/1088163660335169666/image.png" alt="" /><figcaption>Initialisation Git</figcaption>
+</figure>
+<pre><code>ouverture port 3000 pour gitea :</code></pre>
+<p>(Si vous êtes sur une machine virtuelle, allez dans les paramètres de réseau et appliquez les mêmes )</p>
+<figure>
+<img src="https://media.discordapp.net/attachments/900428634664370268/1088157482658037831/image.png?width=470&amp;height=676" alt="" /><figcaption>Paramètre réseau VM</figcaption>
+</figure>
+<p>Creation d’un utilisateur GIT : (tout cela en une fois)</p>
+<pre><code>`sudo adduser \`
+`--system \`
+`--shell /bin/bash \`
+`--gecos &#39;Git Version Control&#39; \`
+`--group \`
+`--disabled-password \`
+`--home /home/git \`
+`git`</code></pre>
+<p>installez wget : Wget est un logiciel libre et open-source de téléchargement de fichiers depuis le web</p>
+<pre><code>`sudo apt install wget`</code></pre>
+<p>Téléchargez le <strong>binaire Gitea</strong> à partir de la page de téléchargement (version 1.18.5) :</p>
+<pre><code>`sudo wget -O /tmp/gitea https://dl.gitea.io/gitea/1.18.5/gitea-1.18.5-linux-amd64]`</code></pre>
+<p>Déplacez le fichier <strong>binaire Gitea</strong> vers /usr/local/bin. :`</p>
+<pre><code> sudo mv /tmp/gitea /usr/local/bin`</code></pre>
+<p>Rendre le binaire exécutable. :</p>
+<pre><code> `sudo chmod +x /usr/local/bin/gitea`</code></pre>
+<p>Créez la structure de répertoires et ajout des autorisations et la propriété requises. :</p>
+<pre><code>`sudo mkdir -p /var/lib/gitea/{custom,data,indexers,public,log}`
+`sudo chown git: /var/lib/gitea/{data,indexers,log}`
+`sudo chmod 750 /var/lib/gitea/{data,indexers,log}`
+`sudo mkdir /etc/gitea`
+`sudo chown root:git /etc/gitea`
+`sudo chmod 770 /etc/gitea`</code></pre>
+<p>Pour créer un fichier d’unité Systemd. Téléchargez le fichier dans le répertoire “/etc/systemd/system/” à l’aide de la commande suivante. :</p>
+<pre><code>`sudo wget https://raw.githubusercontent.com/go-gitea/gitea/main/contrib/systemd/gitea.service -P /etc/systemd/system/`</code></pre>
+<p>Pour recharger et activer le service Gitea :</p>
+<pre><code>`sudo systemctl daemon-reload`
+`sudo systemctl enable --now gitea`</code></pre>
+<p>Pour vérifier l’état du service Gitea :</p>
+<pre><code>`sudo systemctl status gitea`</code></pre>
+<p>installez <a href="https://doc.ubuntu-fr.org/ufw">ufw</a></p>
+<pre><code>`sudo apt install ufw`</code></pre>
+<p>Si vous utilisez un pare-feu ufw sur votre serveur, autorisez le port 3000 :</p>
+<pre><code>`sudo ufw allow 3000/tcp`</code></pre>
+<p>Si vous avez bien suivie toutes les étape votre configuration est prête</p>
+<p>vous pourrez alors aller sur votre machine et écrire <a href="http://localhost:3000/">localhost:3000</a> et ainsi voir :</p>
+<figure>
+<img src="https://media.discordapp.net/attachments/900428634664370268/1088180283389518006/image.png?width=707&amp;height=296" alt="" /><figcaption>Image 1 de gitea lancé</figcaption>
+</figure>
+<figure>
+<img src="https://media.discordapp.net/attachments/900428634664370268/1088179119289815060/image.png?width=697&amp;height=676" alt="" /><figcaption>Image 2 de gitea lancé</figcaption>
+</figure>
+<p>si vous voulez que gitea se lance automatiquement au lancement de la machine vous devez :</p>
+<ul>
+<li><p>Creer un un repertoire :</p>
+<pre><code>      `sudo ufw allow 3000/tcp`</code></pre></li>
+<li><p>Inclure le code suivant :</p>
+<pre><code>  `[Unit]
+   Description=Uncomplicated firewall 
+   After=network.target `
+
+  `[Service]
+   ExecStart=/usr/sbin/ufw --force enable
+    RemainAfterExit=yes`
+
+  ` [Install]
+   WantedBy=multi-user.target`</code></pre>
+<p>Vous pouvez maintenant redémarrer votre machine et gite ainsi que ufw le Lanceron automatiquement</p></li>
+</ul>
+<h2 id="creer-un-depot">Creer un depot</h2>
+<p>pour créer un depot git vous devez simplement clicker sur le bouton ‘+’ en vert :</p>
+<figure>
+<img src="https://media.discordapp.net/attachments/900428634664370268/1089271109108641802/image.png" alt="" /><figcaption>Creation Depot Git</figcaption>
+</figure>
+<p>Vous pouvez choisir le nom du dépot et beaucoup plus d’options :</p>
+<figure>
+<img src="https://media.discordapp.net/attachments/900428634664370268/1089271193242185848/image.png?width=705&amp;height=239" alt="" /><figcaption>Choix nom depot</figcaption>
+</figure>
+<p>Pour pouvoir l’obtenir sur votre machine vous devez copier le lien du dépôt :</p>
+<figure>
+<img src="https://media.discordapp.net/attachments/900428634664370268/1089271241833205810/image.png?width=705&amp;height=130" alt="" /><figcaption>Clone</figcaption>
+</figure>
+<p>et utilisez la commande <code>git clone "[lien git Clone]"</code> :</p>
+<figure>
+<img src="https://media.discordapp.net/attachments/900428634664370268/1089271433152184400/image.png?width=720&amp;height=32" alt="" /><figcaption>Commnde git clone</figcaption>
+</figure>
+<p>Vous aurez alors un nouveau dossier :</p>
+<figure>
+<img src="https://media.discordapp.net/attachments/900428634664370268/1089271510843281528/image.png" alt="" /><figcaption>nouveau dossier</figcaption>
+</figure>
+<p>Apres avoir fini de travailler dans votre dossier pour l’inclure dans votre depot git vous devrez executer la suite commande suivante : - <code>git add [vos nouveau fichier]</code> - <code>git commit -m "message"</code> - <code>git push</code></p>
+<p>Exemple :</p>
+<figure>
+<img src="https://media.discordapp.net/attachments/900428634664370268/1089271904533225562/image.png" alt="" /><figcaption>exemple commande</figcaption>
+</figure>
+<figure>
+<img src="https://media.discordapp.net/attachments/900428634664370268/1089271977019187250/image.png?width=720&amp;height=60" alt="" /><figcaption>depot git</figcaption>
+</figure>
+<h1 id="raport-technique">RAPORT TECHNIQUE</h1>
+<h2 id="nos-difficultés">Nos Difficultés</h2>
+<h3 id="fichier-xml">Fichier XML</h3>
+<ul>
+<li>Nous avons eu un léger problème lorsque nous avons tenté de modifier le nombre de processeur via le fichier XML avec la commande <code>count = "2"</code> car le fichier XML se réactualiser a chaque démarrage supprimant ainsi notre commande.</li>
+</ul>
+<h3 id="grub">Grub</h3>
+<ul>
+<li>Nous avons oublié l’installation de GRUB dans notre première version de la VM, qui nous a empêché d’accéder au système lors de l’exécution de la machine</li>
+</ul>
+<h3 id="création-dune-table-des-matières-sommaire-automatique">Création d’une table des matières / sommaire automatique</h3>
+<ul>
+<li>Nous avons eu énormément de mal á créer automatiquement notre table des matières nous avons du y passer près d’une heure</li>
+</ul>
+<h2 id="résolutions">Résolutions</h2>
+<h3 id="fichier-xml-1">Fichier XML</h3>
+<p>-Nous n’avons pas trouvé d’alternatives impliquant le fichier XML, cependant nous avons effectué les modifications via le panel de contrôle de VirtualBox (cf image)</p>
+<figure>
+<img src="https://cdn.discordapp.com/attachments/1077716382319386807/1078665235159842896/image.png" alt="" /><figcaption>modification cpu</figcaption>
+</figure>
+<h3 id="grub-1">Grub</h3>
+<p>-Nous avons dû recommencer notre VM depuis 0 afin d’y ajouter GRUB.</p>
+<h3 id="création-dune-table-des-matières-sommaire-automatique-1">Création d’une table des matières / sommaire automatique</h3>
+<ul>
+<li>Apres avoir parcouru différentes ressources nous avons décidé de changer d’éditeur et de passer de stackEdit á Visual Studio Code afin d’avoir une extension permettant d’avoir cette fonctionnalité.</li>
+</ul>
+</body>
+</html>

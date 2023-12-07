@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    height: 160px;
+    background-color: #3A5D07;
+}
+
+header > a > img {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+
+
+nav {
+    background-color: #70BA02;
+    height: 80px;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+}
+
+
+
+header > .container {
+    right: 20px;
+    top: 20px;
+    position: absolute;
+    display: flex;
+}
+
+header > .container > .info {
+    color: white;
+    margin-right: 20px;
+}
+
+
+nav > a {
+    color: white;
+    text-decoration: none;
+
+}
+
+.avantages {
+    text-align: center;
+}
+
+.avantages > .container {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.avantages > .container > .box > img {
+    height: 60px;
+}
+
+
+.avantages > .container > .box {
+    width: 560px;
+    height: 200px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    border: 1px solid lightgrey;
+    margin: 10px;
+}
+
+
+.join {
+
+    background-image: url("../images/wallpaper.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 800px;
+    color: white;
+    display: flex;
+    align-items: center;
+    
+    
+}
+
+.join > .content {
+    margin-left: 100px;
+}
+
+
+.join > .content > h1 {
+    width: 635px;
+    font-size: 46px;
+}
+
+
+button, input {
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    
+}
+
+.join > .content > a > button {
+    width: 200px;
+    height: 60px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1.5em;
+    color: white;
+    background-color: #70BA02;
+    font-weight: 800;
+    text-align: left;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.join > .content > a > button > img {
+    vertical-align: middle;
+    filter: invert();
+    margin-left: 12px;
+}
+
+.contributors {
+    color: white;
+    height: 480px;
+    background-color: #11104d;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contributors > h1 {
+    position: relative;
+    top: 100;
+    font-size: 2.5em;
+
+}
+
+.contributors > p {
+    width: 635px;
+}
+
+.contributors > img {
+    width: 400px;
+    position: relative;
+    top: 0px;
+}
+
+.about {
+    height: 240px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.about > p {
+    width: 40%;
+}
+
+.color-alt {
+    color: #70BA02;
+}
+
+
+h1, h2 {
+    font-weight: 900;
+}
+
+footer {
+    background-color: rgb(30, 30, 30);
+    color: white;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer > a {
+    color: rgb(202, 202, 202);
+    text-decoration: none;
+    font-size: 1.25em;
+}
+
+.presentation {
+    
+    padding: 0 100px 100px 100px;
+    text-align: center;
+}
+
+.presentation > p {
+    text-align: justify;   
+    font-size: 1.25em;
+}

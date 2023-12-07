@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/nvidia_white.png" type="image/x-icon">
+    <title>Prêt de locomotion - NVIDIA Covoiturage</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/formulaire.css">
+</head>
+<header id="header">
+    <a href="index.html"><img src="images/nvidia_white.png" height="120"></a>
+    <div class="container">
+        <div class="info">
+            <h4>SERVICE CLIENT</h4>
+            <p>00 33 975 186 797</p>
+        </div>
+        <div class="info">
+            <h4>HEURES D'OUVERTURES</h4>
+            <p>9:00 - 21:00</p>
+        </div>
+        <div class="info">
+            <h4>ADRESSE MAIL</h4>
+            <p>contact@nvidia.com</p>
+        </div>
+    </div>
+</header>
+<body>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="fonctionnement.html">Fonctionnement</a>
+        <a href="proposer.html">Proposer son véhicule</a>
+        <a href="liste.html">Chercher un véhicule</a>
+        <a href="demander.html">Demander un véhicule</a>
+        <a href="info.html">À propos</a>
+    </nav>
+    <div class="presentation">
+        <h1>Proposer son véhicule</h1>
+        <form>
+            <table>
+                <tr>
+                    <td><label>Nom </label></td>
+                    <td><input placeholder="Nom" type="text"></td>
+                </tr>
+                <tr>
+                    <td><label>Prénom: </label></td>
+                    <td><input placeholder="Prénom" type="text"></td>
+                </tr>
+                <tr>
+                    <td><label>Adresse mail: </label></td>
+                    <td><input placeholder="Mail" type="email"></td>
+                </tr>
+                <tr>
+                    <td><label>Lieu de départ: </label></td>
+                    <td><input placeholder="Lieu de départ" type="text"></td>
+                </tr>
+                <tr>
+                    <td><label>Heure de départ: </label></td>
+                    <td><input type="time"></td>
+                </tr>
+                <tr>
+                    <td><label>Lieu d'arrivée: </label></td>
+                    <td><input placeholder="Lieu d'arrivée" type="text"></td>
+                </tr>
+                <tr>
+                    <td><label>Heure d'arrivée: </label></td>
+                    <td><input type="time"></td>
+                </tr>
+                <tr>
+                    <td><label>Nombres de places disponibles: </label></td>
+                    <td>
+                        <input type="number" min="2" max="16" value="2">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Contrôle technique: </label></td>
+                    <td><input placeholder="Déposer le fichier" type="file"></td>
+                </tr>
+                <tr>
+                    <td><label>Trajet fumeur: </label></td>
+                    <td>
+                        <label><input type="radio" name="fumeur"> Oui</label>
+                        <label><input type="radio" name="fumeur"> Non</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Mention additionnelles: </label></td>
+                    <td><textarea></textarea></td>
+                </tr>
+            </table>
+            <input type="submit">
+        </form>
+    </div>
+</body>
+</html>
+
+
